@@ -70,9 +70,37 @@ public TicTacToe(){
 		}
 	window.setVisible(true);
 }
-public void checkWin(){
-	for(int i=0;i<8;i++){
+
+private String get(int i)
+{
+	return buttons[i].getText();
+}
+
+public void checkWin()
+{
+	for(int i = 0; i < Wins.length; i++)
+	{
+		String text = get(Wins[i][0]);
+		if(text.isEmpty())
+			continue;
+		boolean win = true;
+		
+		for(int j = 1; j < Wins[i].length; j++)
+		{
+			if(!text.equals(get(Wins[i][j])))
+			{
+				win = false;
+				break;
+			}
+		}
+		
+		if(win)
+		{
+			//The player in text has won	
+		}
 	}
+	
+	//Noone has won.
 }
 public void	actionPerformed(ActionEvent	click)
 {
